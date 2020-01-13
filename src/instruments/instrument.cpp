@@ -1,5 +1,8 @@
 #include <iostream>
 #include "instrument_dumb.h"
+#include "seno.h"
+#include "fm1.h"
+#include "fm2.h"
 
 /*
   For each new instrument:
@@ -18,6 +21,19 @@ namespace upc {
     if (name == "InstrumentDumb") {
       pInst = (Instrument *) new InstrumentDumb(parameters);
     }
+
+    else if (name == "Seno") {
+      pInst = (Instrument *) new Seno(parameters);
+    }
+
+    else if(name =="Fm1"){
+      pInst = (Instrument *) new Fm1(parameters);
+    }
+
+     else if(name =="Fm2"){
+      pInst = (Instrument *) new Fm2(parameters);
+    }
+
     return pInst;
   }
 }
