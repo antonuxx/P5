@@ -140,6 +140,12 @@ const vector<float> & Seno::synthesize() {
     if (index == tbl.size())
       index = 0;
   }
+  
+  # Creamos una señal senoidal en la que, a partir de la función sin(), creamos un seno. Teniendo en 
+  # cuenta que A y phase son parámetros de la clase Seno, y que la señal es periódica, hay qye ir 
+  # adaptando la fase para que siempre sea más pequeña que 2*M_PI.
+  # El atributo step lo utilizamos para asegurarnos que los saltos que hacemos a la hora de asignar
+  # valores sean enteros y podamos operar con ellos, teniendo en cuenta que la señal es discreta.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
 - Si ha implementado la síntesis por tabla almacenada en fichero externo, incluya a continuación el código del método
@@ -151,6 +157,19 @@ const vector<float> & Seno::synthesize() {
   Deberá explicar detalladamente cómo se manifiestan los parámetros del efecto (frecuencia e índice de modulación) en
   la señal generada (se valorará que la explicación esté contenida en las propias gráficas, sin necesidad de
   *literatura*).
+  
+  **Señal original**
+  
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_ORIGINAL.png" width="480" align="center">
+  
+  **Señal con trémolo**
+  
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_TREMOLO.png" width="480" align="center">
+  
+  **Señal con vibrato**
+
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_VIBRATO.png" width="480" align="center">
+
 - Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué resultado ha
   producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar el efecto, e indique,
   a continuación, la orden necesaria para generar los ficheros de audio usando el programa `synth`.
