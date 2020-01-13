@@ -28,26 +28,26 @@ visualizar el funcionamiento de la curva ADSR.
 * Un instrumento con una envolvente ADSR genérica, para el que se aprecie con claridad cada uno de sus parámetros:
   ataque (A), caída (D), mantenimiento (S) y liberación (R).
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_1.png" width="640" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_1.png" width="480" align="center">
   
 * Un instrumento *percusivo*, como una guitarra o un piano, en el que el sonido tenga un ataque rápido, no haya
   mantenimiemto y el sonido se apague lentamente.
   - Para un instrumento de este tipo, tenemos dos situaciones posibles:
     * El intérprete mantiene la nota *pulsada* hasta su completa extinción.
     
-    <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_2.png" width="640" align="center">
+    <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_2.png" width="480" align="center">
     
     * El intérprete da por finalizada la nota antes de su completa extinción, iniciándose una disminución rápida del
       sonido hasta su finalización.
       
-      <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_3.png" width="640" align="center">
+      <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_3.png" width="480" align="center">
       
   - Debera representar en esta memoria **ambos** posibles finales de la nota.
 * Un instrumento *plano*, como los de cuerdas frotadas (violines y semejantes) o algunos de viento. En ellos, el
   ataque es relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la liberación también
   es bastante rápida.
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_4.png" width="640" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/ADSR_DUMB_4.png" width="480" align="center">
 
 Para los cuatro casos, deberá incluir una gráfica en la que se visualice claramente la curva ADSR. Deberá añadir la
 información necesaria para su correcta interpretación, aunque esa información puede reducirse a colocar etiquetas y
