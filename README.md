@@ -59,6 +59,30 @@ Implemente el instrumento `Seno` tomando como modelo el `InstrumentDumb`. La se�
 búsqueda de los valores en una tabla.
 
 - Incluya, a continuación, el código del fichero `seno.cpp` con los métodos de la clase Seno.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+Seno::Seno(const std::string &param) 
+  : adsr(SamplingRate, param) {
+  bActive = false;
+  x.resize(BSIZE);
+  
+  KeyValue kv(param);
+  int N;
+
+  if (!kv.to_int("N",N))
+    N = 40; //default value
+  
+  //Create a tbl with one period of a sinusoidal wave
+  tbl.resize(N);
+  float phase = 0, step = 2 * M_PI /(float) N;
+  index = 0;
+  for (int i=0; i < N ; ++i) {
+    tbl[i] = sin(phase);
+    phase += step;
+  }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Explique qué método se ha seguido para asignar un valor a la señal a partir de los contenidos en la tabla, e incluya
   una gráfica en la que se vean claramente (use pelotitas en lugar de líneas) los valores de la tabla y los de la
   señal generada.
