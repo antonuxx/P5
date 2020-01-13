@@ -83,9 +83,65 @@ Seno::Seno(const std::string &param)
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+void Seno::command(long cmd, long note, long vel) {
+  float playedNote;
+  if (cmd == 9) {		//'Key' pressed: attack begins
+    bActive = true;
+    adsr.start();
+    index = 0;
+    Seno::phase=0;
+    float f0=440.0*pow(2,(((float)note-69.0)/12.0));
+    playedNote = f0/SamplingRate;
+  	A = vel / 127.;
+    Seno::step = 2 * M_PI * playedNote;
+  }
+  else if (cmd == 8) {	//'Key' released: sustain ends, release begins
+    adsr.stop();
+  }
+  else if (cmd == 0) {	//Sound extinguished without waiting for release to end
+    adsr.end();
+  }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+const vector<float> & Seno::synthesize() {
+  if (not adsr.active()) {
+    x.assign(x.size(), 0);
+    bActive = false;
+    return x;
+  }
+  else if (not bActive)
+    return x;
+
+  for (unsigned int i=0; i<x.size(); ++i) {
+    x[i]=0.3*(Seno::A)*sin((Seno::phase));
+    Seno::phase += Seno::step;
+    while((Seno::phase) > 2*M_PI) (Seno::phase) -= 2*M_PI;
+    if (index == tbl.size())
+      index = 0;
+  }
+  adsr(x); //apply envelope to x and update internal status of ADSR
+
+  return x;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Explique qué método se ha seguido para asignar un valor a la señal a partir de los contenidos en la tabla, e incluya
   una gráfica en la que se vean claramente (use pelotitas en lugar de líneas) los valores de la tabla y los de la
   señal generada.
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  for (unsigned int i=0; i<x.size(); ++i) {
+    x[i]=0.3*(Seno::A)*sin((Seno::phase));
+    Seno::phase += Seno::step;
+    while((Seno::phase) > 2*M_PI) (Seno::phase) -= 2*M_PI;
+    if (index == tbl.size())
+      index = 0;
+  }
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
 - Si ha implementado la síntesis por tabla almacenada en fichero externo, incluya a continuación el código del método
   `command()`.
 
