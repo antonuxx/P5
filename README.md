@@ -160,11 +160,12 @@ const vector<float> & Seno::synthesize() {
   
   **Señal original**
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremi.PNG" width="480" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremi.PNG" width="640" align="center">
   
   **Señal con trémolo**
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremitrem.PNG" width="480" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremitrem.PNG" width="640" align="center">
+  
   
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
   # Comparando el trémolo con la señal original podemos apreciar que la amplitud del ADSR no es 
@@ -172,11 +173,11 @@ const vector<float> & Seno::synthesize() {
   # como vemos abajo.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_TREMOLO.PNG" width="480" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_TREMOLO.PNG" width="640" align="center">
   
   **Señal con vibrato**
 
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_VIBRATO.PNG" width="480" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_VIBRATO.PNG" width="640" align="center">
 
 - Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué resultado ha
   producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar el efecto, e indique,
