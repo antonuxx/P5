@@ -178,6 +178,11 @@ const vector<float> & Seno::synthesize() {
   **Señal con vibrato**
 
   <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/VIBRATO_DUMB.PNG" width="640" align="center">
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  # En este caso, como podemos observar, para conseguir el efecto del vibrato variamos la frecuencia
+  # de la señal en vez de la amplitud.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué resultado ha
   producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar el efecto, e indique,
