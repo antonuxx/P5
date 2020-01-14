@@ -160,9 +160,17 @@ const vector<float> & Seno::synthesize() {
   
   **Señal original**
   
-  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_ORIGINAL.PNG" width="480" align="center">
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremi.PNG" width="480" align="center">
   
   **Señal con trémolo**
+  
+  <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/doremitrem.PNG" width="480" align="center">
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  # Comparando el trémolo con la señal original podemos apreciar que la amplitud del ADSR no es 
+  # constante, sino que va oscilando. Haciendo zoom en una nota podemos apreciar mejor este efecto,
+  # como vemos abajo.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
   <img src="https://github.com/antonuxx/P5/blob/Sole-Villalonga/work/images/DUMB_TREMOLO.PNG" width="480" align="center">
   
