@@ -216,6 +216,13 @@ Use el programa `synth` para generar canciones a partir de su partitura MIDI. Co
   están en direcotorio indicado).
   
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  
+  # Para generar la canción "You've got a friend in me" hemos creado un nuevo instrumento llamado 
+  # fm2, el cual podemos poner como voz principal o bien como bajo. Hemos probado las dos combinaciones
+  # (siendo el otro instrumento el Seno generado anteriormente) y hemos guardado ambos archivos en 
+  # work/Music, en donde toysenfm2.wav tiene como voz solista el instrumento Seno; y a toyfmsen2.wav se
+  # le ha asignado la voz solista a nuestro instrumento fm2.
+  
   synth work/Music/instruments.orc samples/ToyStory_A_Friend_in_me.sco work/Music/toysenfm2.wav
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
